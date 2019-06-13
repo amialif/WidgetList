@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Widget Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+    	
+        <h2 class="text-center p-3">Widget Details</h2>
+        
+        <ol class="breadcrumb">
+            <li><a href="#" th:href="${'/widgets'}">Home</a></li>
+        </ol>
+        
+        <form class="form">
+            <div class="form-group">
+           		<div class="row">
+                	<label class="col-sm-2 control-label">ID:</label>
+	                <div class="col-sm-10">
+	                    <p class="form-control-static" th:text="${widget.id}">Widget ID</p>
+	                </div>
+                </div>
+            </div>
+            <div class="form-group">
+            	<div class="row">
+                	<label class="col-sm-2 control-label">Name:</label>
+                	<div class="col-sm-10">
+                    	<p class="form-control-static" th:text="${widget.name}">Widget Name</p>
+                	</div>
+                </div>
+            </div>
+            <div class="form-group">
+            	<div class="row">
+            		<label class="col-sm-2 control-label">Description:</label>
+	                <div class="col-sm-10">
+	                    <p class="form-control-static" th:text="${widget.description}">Widget Description</p>
+	                </div>
+            	</div>                
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <a href="#" class="btn btn-warning" th:href="${'/widget/edit/' + widget.id}">Edit</a>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+   </body>
+ </html>

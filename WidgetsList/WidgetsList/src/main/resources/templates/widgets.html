@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Widgets</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+    	<h2 class="text-center p-3">Widgets List Application</h2>
+        
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+	            <tr>
+	                <th>ID</th>
+	                <th>Name</th>
+	                <th>Description</th>
+	                <th>View</th>
+	                <th>Edit</th>
+	                <th>Delete</th>
+	            </tr>            
+            </thead>
+            <tbody>
+             <tr th:each="widget : ${widgets}">
+                <td th:text="${widget.id}">Widget ID</td>
+                <td th:text="${widget.name}">Widget Name</td>
+                <td th:text="${widget.description}">Widget Description</td>
+                <td><a class="btn btn-info" href="#" th:href="${'/widget/' + widget.id}">View</a> </td>
+                <td><a class="btn btn-warning" href="#" th:href="${'/widget/edit/' + widget.id}">Edit</a> </td>
+                <td><a class="btn btn-danger text-white" href="#" th:href="${'/widget/delete/' + widget.id}">Delete</a> </td>
+            </tr>
+            
+            </tbody>
+           
+        </table>
+        <a class="btn btn-success text-white btn-lg" th:href="${'/widget/new'}">Add New Widget</a>
+        
+    </div>
+</body>
+</html>
