@@ -28,6 +28,7 @@ public class WidgetController {
 	/**
      * Load the new widget page.
      */    
+    
     @GetMapping("/widget/new")
     public String newWidget(Model model) {
         model.addAttribute("widget", new Widget());
